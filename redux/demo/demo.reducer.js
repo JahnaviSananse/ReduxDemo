@@ -1,6 +1,6 @@
 
 const INITIAL_STATE={
-    currentItem:'Yash Sanghavi',
+    currentItem:'jahnavi',
 };
 
 const DemoReducer=(state=INITIAL_STATE,action)=>{

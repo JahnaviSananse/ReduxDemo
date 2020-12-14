@@ -72,30 +72,27 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  View,
-  Button,
   Text,
   TextInput
 } from 'react-native';
 import { connect } from 'react-redux';
-import {setText} from './redux/demo/demo.actions';
+import { setText } from './redux/demo/demo.actions';
 
-const App=({demo,updateText})=> {
-  
- 
-      // const item = this.props.demo;
-      // const updateText = this.props.updateText;
-    return (
-      <>
+const App = ({ demo, updateText }) => {
+
+  return (
+    <>
       <TextInput
-      style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
-      onChangeText={text => updateText(text)}
-      value={demo}
-    />
-      <Text>Yash Sanghavi:{demo}</Text>
+        style={{ fontSize:20,height: 60, borderColor: 'black', borderWidth: 2, marginTop: '50%' }}
+        onChangeText={text => updateText(text)}
+        value={demo}
+      />
+      <Text style={{ fontSize:20,marginTop:10}}>
+          You are typing : {demo}
+      </Text>
     </>
-    );
-  }
+  );
+}
 
 
 const styles = StyleSheet.create({
@@ -110,10 +107,9 @@ const mapStateToProps = state => ({
   demo: state.demo.currentItem,
 });
 
-
 const mapDispatchToProps = dispatch => ({
 
-  updateText : (item)=>dispatch(setText(item)),
+  updateText: (item) => dispatch(setText(item)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
